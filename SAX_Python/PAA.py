@@ -16,10 +16,6 @@ def PAA_coding_function(data,num_segments):
     # Output:
     # -- PAA_result : Result of applying PAA on data
     
-    # PLOTTING ? %
-    plotting = 0;
-    
-    
     # We normalize the signal (mean = 0; standard deviation = 1):
     data_norm = (data-data.mean(axis=0))/data.std(axis=0);
     
@@ -43,7 +39,6 @@ def PAA_coding_function(data,num_segments):
             for i in range(num_segments):
                 temp[i,] = data_norm;
             expanded_sub_section = temp.flatten(1);
-            
             
             PAA_result = numpy.mean(expanded_sub_section.reshape(num_segments,data_length).transpose(),axis=0);
         # N is divisible by n
